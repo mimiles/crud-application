@@ -1,7 +1,7 @@
 import csv
 
 
-# READ PRODUCTS CSV
+## READ PRODUCTS CSV
 
 products = []
 
