@@ -29,6 +29,8 @@ chosen_operation = chosen_operation.title()
 
 def list_products():
     print("LISTING PRODUCTS")
+    for product in products:
+        print(" + Product #" + str(product["id"]) + ": " + product["name"])
 
 def show_product():
     product_id = input("OK. WHAT IS THE PRODUCT'S ID? ")
