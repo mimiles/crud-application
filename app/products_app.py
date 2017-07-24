@@ -29,14 +29,14 @@ chosen_operation = chosen_operation.title()
 
 def list_products():
     print("LISTING PRODUCTS")
-    #IMPLEMENT THE LIST OPERATION
-
 
 def show_product():
-    print("SHOWING A PRODUCT")
-    #IMPLEMENT THE SHOW OPERATION
-    #show_product = [product for product in products if product["id"] == product_id]
-    #return show_product[0]
+    product_id = input("OK. WHAT IS THE PRODUCT'S ID? ")
+    product = [p for p in products if p["id"] == product_id][0]
+    if product:
+        print("READING PRODUCT HERE", product)
+    else:
+        print("COULDN'T FIND A PRODUCT WITH IDENTIFIER", product)
 
 def create_product():
     print("CREATING A PRODUCT")
@@ -53,15 +53,12 @@ def create_product():
     }
     print("NEW PRODUCT IS", new_product)
     products.append(new_product)
-    #IMPLEMENT THE CREATE OPERATION
 
 def update_product():
     print("UPDATING A PRODUCT")
-    #IMPLEMENT THE UPDATE OPERATION AS FINAL STEP IN CHECKPOINT III
 
 def destroy_product():
     print("DESTROYING A PRODUCT")
-    #IMPLEMENT THE DESTROY OPERATION
 
 if chosen_operation == "List": list_products()
 elif chosen_operation == "Show": show_product()
@@ -78,8 +75,3 @@ with open(csv_file_path, "w") as csv_file:
     writer.writeheader() # uses fieldnames set above
     for product in products:
         writer.writerow(product)
-
-#IMPLEMENT SHOW OPERATION
-
-show_product = [product for product in products if product["id"] == product_id]
-    return matching_products[0]
